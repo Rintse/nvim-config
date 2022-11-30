@@ -1,0 +1,31 @@
+#!/bin/bash
+bold=$(tput bold)
+normal=$(tput sgr0)
+set -e
+
+tmp_dir=$(mktemp -d)
+cd $tmp_dir
+
+# Grab a relatively recent version of neovim
+echo "${bold}Installing neovim${normal}"
+wget https://github.com/neovim/neovim/releases/download/v0.8.0/nvim-linux64.deb
+sudo dpkg -i nvim-linux64.deb
+
+# Clone and deploy config files
+echo "${bold}Deploying configuration files${normal}"
+git clone https://github.com/rintse/nvimcfg
+cd nvimcfg || exit 1
+./deploy
+
+# Install packer.nvim
+echo "${bold}Installing packer.nvim${normal}"
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# Install plugins
+echo "${bold}Installing plugins using packer${normal}"
+nvim -c "PackerInstall | qa!"
+
+# TODO: install language servers?
+
+rm -rf $tmp_dir
