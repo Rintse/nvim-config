@@ -11,6 +11,7 @@ end
 
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+    use 'eandrju/cellular-automaton.nvim'
 
     -- Allow other processes to interact (like back-srch in pdf)
     use 'mhinz/neovim-remote'
@@ -54,3 +55,4 @@ return require('packer').startup(function(use)
     use 'vim-pandoc/vim-pandoc'
     use 'vim-pandoc/vim-pandoc-syntax'
 end)
+

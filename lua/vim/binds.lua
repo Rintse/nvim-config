@@ -45,3 +45,4 @@ vim.keymap.set('n', '<Leader>mj', '<Cmd>WinShift down<CR>',     {silent=true})
 vim.keymap.set('n', '<Leader>mk', '<Cmd>WinShift up<CR>',       {silent=true})
 vim.keymap.set('n', '<Leader>ml', '<Cmd>WinShift right<CR>',    {silent=true})
 
+vim.keymap.set('n', '<Leader>fml', ':CellularAutomaton make_it_rain<CR>', {silent = true})

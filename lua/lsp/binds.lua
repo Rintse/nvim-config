@@ -1,6 +1,11 @@
 local tele = require('telescope.builtin')
 local preview = require('goto-preview')
 
+function vsplit_lsp(action)
+    action()
+    vim.cmd("vs#")
+end 
+
 local M = {
     binds = {
         { key = '<Leader>gpd'   ,   action = preview.goto_preview_definition },
@@ -8,9 +13,9 @@ local M = {
         { key = '<Leader>gP'    ,   action = preview.close_all_win },
         { key = '<Leader>gpr'   ,   action = preview.goto_preview_references },
         
-        { key = '<Leader>spd'   ,   action = vim.lsp.buf.definition },
-        { key = '<Leader>spd'   ,   action = vim.lsp.buf.type_definition },
-        { key = '<Leader>spi'   ,   action = vim.lsp.buf.implementation },
+        { key = '<Leader>vgd'   ,   action = function() vsplit_lsp(vim.lsp.buf.definition) end },
+        { key = '<Leader>vgi'   ,   action = function() vsplit_lsp(vim.lsp.buf.implementation) end },
+        { key = '<Leader>vgt'   ,   action = function() vsplit_lsp(vim.lsp.buf.type_definition) end },
 
         { key = '<Leader>gD'    ,   action = vim.lsp.buf.declaration },
         { key = '<Leader>gd'    ,   action = vim.lsp.buf.definition },

@@ -6,7 +6,7 @@ vim.g['localleader'] = '\\'
 
 vset.relativenumber = false
 vset.syntax = on
--- why is this a vim cmd
+
 vim.cmd("colorscheme nord")
 
 vset.laststatus = 2 --Always keep statusbar
@@ -50,9 +50,5 @@ vset.joinspaces = false
 vset.foldexpr = 'nvim_treesitter#foldexpr()'
 vset.foldmethod = 'expr'
 vset.foldenable = false
-
-vim.g['netrw_banner'] = 0
-vim.g['netrw_browse_split'] = 0
-vim.g['netrw_winsize'] = 24
 
 require('Comment').setup()
