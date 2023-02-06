@@ -1,8 +1,8 @@
 -- Calls telescope git_files if in a git repo,
 -- calls telescope find_files otherwise
 function TS_git_fallback()
-    local ok = pcall(require'telescope.builtin'.git_files)
-    if not ok then require'telescope.builtin'.find_files() end
+    local rv_ok = pcall(require'telescope.builtin'.git_files)
+    if not rv_ok then require'telescope.builtin'.find_files() end
 end
 
 vim.keymap.set('n', '<Leader>fa', TS_git_fallback)
