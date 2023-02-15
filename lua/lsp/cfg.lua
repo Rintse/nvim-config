@@ -2,6 +2,14 @@ local nvim_lsp = require('lspconfig')
 
 -- vim.lsp.set_log_level("debug")
 
+-- Borders around LSP hovers
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, { border = "single" }
+)
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, { border = "single" }
+)
+
 local servers = { 
     'hls', 
     'rls', 
