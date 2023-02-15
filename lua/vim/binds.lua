@@ -3,10 +3,6 @@ vim.keymap.set('n', '<Space>', '<Nop>', {desc='Unbind leader'})
 vim.keymap.set('n', 'Z', '<Nop>', {desc='Avoid accidental close'})
 vim.keymap.set('n', 'ZZ', '<Nop>', {desc='Avoid accidental close'})
 
--- I tend to use : much more, but it's more annoying to input
-vim.keymap.set('n', ':', ';')
-vim.keymap.set('n', ';', ':')
-
 -- Place cursor in between these characters when typed
 vim.keymap.set('i', '\"\"', '\"\"<Left>')
 vim.keymap.set('i', '\'\'', '\'\'<Left>')
