@@ -51,4 +51,6 @@ vset.foldexpr = 'nvim_treesitter#foldexpr()'
 vset.foldmethod = 'expr'
 vset.foldenable = false
 
+vim.opt.colorcolumn = "80"
+
 require('Comment').setup()
