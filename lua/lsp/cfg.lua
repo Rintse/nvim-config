@@ -12,7 +12,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 
 local servers = { 
     'hls', 
-    'rls', 
+    'rust-analyzer', 
     'clangd', 
     'eslint', 
     'tsserver',
