@@ -8,6 +8,7 @@ vset.relativenumber = false
 vset.syntax = on
 
 vim.cmd("colorscheme nord")
+vim.api.nvim_set_hl(0, 'vertsplit', { fg = "LightSteelBlue4" })
 
 vset.laststatus = 2 --Always keep statusbar
 vset.belloff='all'
@@ -51,6 +52,6 @@ vset.foldexpr = 'nvim_treesitter#foldexpr()'
 vset.foldmethod = 'expr'
 vset.foldenable = false
 
-vim.opt.colorcolumn = "81"
+vim.opt.colorcolumn = "90"
 
 require('Comment').setup()
