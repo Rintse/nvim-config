@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
     -- Looks
     use 'nvim-lualine/lualine.nvim'
     use 'shaunsingh/nord.nvim'
+    -- use 'andersevenrud/nordic.nvim'
     use 'kyazdani42/nvim-web-devicons'
     
     -- File/buffer/window management
@@ -34,6 +35,7 @@ return require('packer').startup(function(use)
     use 'kyazdani42/nvim-tree.lua'
     
     -- Autocomplete (cmp)
+    use 'nvim-telescope/telescope-ui-select.nvim'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/nvim-cmp'

@@ -12,7 +12,6 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 
 local servers = { 
     'hls', 
-    'rust_analyzer', 
     'clangd', 
     'eslint', 
     'tsserver',
@@ -28,6 +27,17 @@ end
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp')
     .default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+
+-- Separate due to settings table
+require'lspconfig'.rust_analyzer.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = {
+        debounce_text_changes = 150,
+    },
+    settings = { ['rust-analyzer'] = { checkOnSave = {command = "clippy"} } }
+}
 
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
