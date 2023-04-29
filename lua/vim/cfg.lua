@@ -7,7 +7,7 @@ vim.g['localleader'] = '\\'
 vset.relativenumber = false
 vset.syntax = on
 
-vim.cmd("colorscheme nord")
+vim.cmd("colorscheme onenord")
 vim.api.nvim_set_hl(0, 'vertsplit', { fg = "LightSteelBlue4" })
 
 vset.laststatus = 2 --Always keep statusbar

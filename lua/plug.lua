@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
     -- Looks
     use 'nvim-lualine/lualine.nvim'
     use 'shaunsingh/nord.nvim'
-    -- use 'andersevenrud/nordic.nvim'
+    use 'rmehri01/onenord.nvim'
     use 'kyazdani42/nvim-web-devicons'
     
     -- File/buffer/window management
@@ -49,9 +49,7 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     -- LSP Dependencies
     use 'nvim-lua/plenary.nvim'
-    use {'nvim-treesitter/nvim-treesitter', 
-        run=updateTS
-    }
+    use {'nvim-treesitter/nvim-treesitter', run=updateTS }
     
     -- Pandoc/LaTeX
     use 'vim-pandoc/vim-pandoc'
