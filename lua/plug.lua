@@ -25,17 +25,17 @@ return require('packer').startup(function(use)
     
     -- Looks
     use 'nvim-lualine/lualine.nvim'
-    use 'shaunsingh/nord.nvim'
     use 'rmehri01/onenord.nvim'
+    use 'shaunsingh/nord.nvim'
     use 'kyazdani42/nvim-web-devicons'
     
     -- File/buffer/window management
     use 'nvim-telescope/telescope.nvim'
+    use 'nvim-telescope/telescope-ui-select.nvim'
     use 'sindrets/winshift.nvim'
     use 'kyazdani42/nvim-tree.lua'
     
     -- Autocomplete (cmp)
-    use 'nvim-telescope/telescope-ui-select.nvim'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/nvim-cmp'
@@ -47,9 +47,13 @@ return require('packer').startup(function(use)
     -- LSP stuff
     use 'rmagatti/goto-preview'
     use 'neovim/nvim-lspconfig'
+    use 'mfussenegger/nvim-dap'
+    use 'mfussenegger/nvim-dap-python'
     -- LSP Dependencies
     use 'nvim-lua/plenary.nvim'
-    use {'nvim-treesitter/nvim-treesitter', run=updateTS }
+    use {'nvim-treesitter/nvim-treesitter', 
+        run=updateTS
+    }
     
     -- Pandoc/LaTeX
     use 'vim-pandoc/vim-pandoc'

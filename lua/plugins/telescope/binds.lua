@@ -16,6 +16,8 @@ return {
         ["<esc>"] = actions.close,
         ["<C-v>"] = actions.select_vertical,
         ["<C-s>"] = actions.select_horizontal,
-        ["<C-d>"] = actions.delete_buffer
+        ["<C-d>"] = actions.delete_buffer,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
     },
 }

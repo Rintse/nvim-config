@@ -48,10 +48,24 @@ vset.directory = home .. '/.config/swapfiles/'
 vset.spelllang = 'en_gb'
 vset.joinspaces = false
 
-vset.foldexpr = 'nvim_treesitter#foldexpr()'
 vset.foldmethod = 'expr'
-vset.foldenable = false
+vset.foldexpr = 'nvim_treesitter#foldexpr()'
 
-vim.opt.colorcolumn = "80"
+vset.foldenable = false
+vim.opt.colorcolumn = "81"
+vim.cmd("hi vertsplit guifg=#616e88 guibg=bg")
+
+local setup_glft = function()
+    vim.opt.foldmethod = "expr"
+    vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+    vim.cmd("set ft=json")
+end
+
+vim.api.nvim_create_augroup("gltf", { clear = true })
+vim.api.nvim_create_autocmd({ "BufEnter", "BufNew"}, {
+    group = "gltf",
+    pattern = { "*.gltf" },
+    callback = setup_glft
+})
 
 require('Comment').setup()

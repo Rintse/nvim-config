@@ -1,5 +1,6 @@
 local tele = require('telescope.builtin')
 local preview = require('goto-preview')
+local dap = require('dap')
 
 function vsplit_lsp(action)
     action()
@@ -36,8 +37,16 @@ local M = {
     },
 }
 
+local opts = { noremap=true, silent=true, buffer=bufnr }
+
+-- DAP
+vim.keymap.set('n', '<Leader>db',   dap.toggle_breakpoint)
+vim.keymap.set('n', '<Leader>dc',   dap.continue)
+vim.keymap.set('n', '<Leader>dso',  dap.step_over)
+vim.keymap.set('n', '<Leader>dsi',  dap.step_into)
+vim.keymap.set('n', '<Leader>do',   dap.repl.open)
+
 function M.set_lsp_binds(self, bufnr)
-    local opts = { noremap=true, silent=true, buffer=bufnr }
 
     for i,mapping in ipairs(M.binds) do
         vim.keymap.set('n', mapping.key, mapping.action, opts)
