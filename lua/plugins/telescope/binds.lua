@@ -8,6 +8,7 @@ end
 vim.keymap.set('n', '<Leader>fa', TS_git_fallback)
 vim.keymap.set('n', '<Leader>fg', ':Telescope live_grep<CR>')
 vim.keymap.set('n', '<Leader>fb', ':Telescope buffers<CR>')
+vim.keymap.set('n', '<Leader>ff', require'telescope.builtin'.resume)
 
 actions = require('telescope.actions')
 
