@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -e
-NVIM_DIR=$HOME/.config/nvim/
-
-mkdir -p "$NVIM_DIR"
-cp -r ./init.lua ./lua/ $NVIM_DIR
