@@ -2,25 +2,15 @@
 require('plug')
 
 -- Vim functionality
-require('vim.cfg')
-require('vim.binds')
-
+require('vim')
 -- Neovim LSP config
-require('lsp.cfg')
-require('lsp.binds')
-
+require('lsp')
 -- Autocomplete with cmp
-require('autocomplete.cfg')
-require('autocomplete.binds')
-
+require('autocomplete')
 
 -- Plugin configuration
-require('plugins.telescope.cfg')
-require('plugins.telescope.binds')
-
-require('plugins.tree.cfg')
-require('plugins.tree.binds')
-
-require('plugins.line.cfg')
-require('plugins.line.binds')
+require('plugins.telescope')
+require('plugins.line')
+require('plugins.treesitter')
+require('plugins.oil')
 

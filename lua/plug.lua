@@ -9,54 +9,38 @@ updateTS = function()
     )
 end
 
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use 'eandrju/cellular-automaton.nvim'
+require('packer').init({ max_jobs = 8 })
 
-    -- Allow other processes to interact (like back-srch in pdf)
-    use 'mhinz/neovim-remote'
-    -- Surround objects
-    use 'tpope/vim-surround'
-    -- Dot repeat custom stuff
-    use 'tpope/vim-repeat'
+use = require('packer').use
+use 'wbthomason/packer.nvim'
+use 'eandrju/cellular-automaton.nvim'
+use 'numToStr/Comment.nvim'
 
-    -- Language aware commenting
-    use 'numToStr/Comment.nvim'
-    
-    -- Looks
-    use 'nvim-lualine/lualine.nvim'
-    use 'rmehri01/onenord.nvim'
-    use 'shaunsingh/nord.nvim'
-    use 'kyazdani42/nvim-web-devicons'
-    
-    -- File/buffer/window management
-    use 'nvim-telescope/telescope.nvim'
-    use 'nvim-telescope/telescope-ui-select.nvim'
-    use 'sindrets/winshift.nvim'
-    use 'kyazdani42/nvim-tree.lua'
-    
-    -- Autocomplete (cmp)
-    use 'hrsh7th/cmp-vsnip'
-    use 'hrsh7th/vim-vsnip'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    
-    -- LSP stuff
-    use 'rmagatti/goto-preview'
-    use 'neovim/nvim-lspconfig'
-    use 'mfussenegger/nvim-dap'
-    use 'mfussenegger/nvim-dap-python'
-    -- LSP Dependencies
-    use 'nvim-lua/plenary.nvim'
-    use {'nvim-treesitter/nvim-treesitter', 
-        run=updateTS
-    }
-    
-    -- Pandoc/LaTeX
-    use 'vim-pandoc/vim-pandoc'
-    use 'vim-pandoc/vim-pandoc-syntax'
-end)
+-- Looks
+use 'nvim-lualine/lualine.nvim'
+use 'rmehri01/onenord.nvim'
+use 'shaunsingh/nord.nvim'
+use 'kyazdani42/nvim-web-devicons'
 
+-- File/buffer/window management
+use 'nvim-telescope/telescope.nvim'
+use 'nvim-telescope/telescope-ui-select.nvim'
+use 'sindrets/winshift.nvim'
+use 'stevearc/oil.nvim'
+
+-- Autocomplete (cmp)
+use 'hrsh7th/cmp-vsnip'
+use 'hrsh7th/vim-vsnip'
+use 'hrsh7th/nvim-cmp'
+use 'hrsh7th/cmp-nvim-lsp'
+use 'hrsh7th/cmp-buffer'
+use 'hrsh7th/cmp-path'
+use 'hrsh7th/cmp-cmdline'
+
+-- LSP stuff
+use 'rhysd/git-messenger.vim'
+use 'rmagatti/goto-preview'
+use 'neovim/nvim-lspconfig'
+use 'nvim-lua/plenary.nvim'
+use {'nvim-treesitter/nvim-treesitter', run=updateTS }
+use 'nvim-treesitter/nvim-treesitter-context'
